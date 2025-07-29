@@ -57,6 +57,14 @@ This project supports various AI development tools. The table below outlines the
 
 ## Installation
 
+### Installing via Smithery
+
+To install Chat History Local Memory Recorder for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@henryalps/chat-history-recorder-mcp):
+
+```bash
+npx -y @smithery/cli install @henryalps/chat-history-recorder-mcp --client claude
+```
+
 1. Clone or download the project locally
 2. Install dependencies:
 
