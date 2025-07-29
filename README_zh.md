@@ -3,7 +3,7 @@
   <h1>对话历史记录 MCP 服务器</h1>
   <p>一个用于自动记录 AI 对话历史的 MCP (模型上下文协议) 服务器。</p>
   <p>
-    <a href="https://github.com/psf/black"><img alt="代码风格: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+    <a href="https://smithery.ai/server/@henryalps/chat-history-recorder-mcp"><img alt="smithery badge" src="https://smithery.ai/badge/@henryalps/chat-history-recorder-mcp"></a>
   </p>
 </div>
 
@@ -31,6 +31,27 @@
 - 📝 **标准格式**: 4行格式的记录 (时间戳, 用户输入, 系统输出摘要, 文件操作)。
 - 🔧 **回退机制**: 在配置文件丢失时自动使用默认配置。
 - 📋 **智能摘要**: 系统输出被自动摘要以实现简洁存储。
+
+## 支持工具
+
+该项目支持各种AI开发工具。下表概述了每种配置的兼容性和配置要求。
+
+| 工具              | 支持 | 需要集成规则 | 返回模型名称 |
+| :---------------- | :-------: | :-----------------------: | :----------------: |
+| `roocode`         |     ✅    |             ✅            |         ✅         |
+| `cline`           |     ✅    |             ✅            |         ✅         |
+| `Cursor`          |     ✅    |             ✅            |         ✅         |
+| `kiro`            |     ✅    |             ❌            |         ❌         |
+| `augment agent`   |     ✅    |             ✅            |         ❌         |
+| `augment chat`    |     ❌    |            N/A            |        N/A         |
+| `gemini cli`      |     ❌    |            N/A            |        N/A         |
+
+
+- ✅：支持/是
+- ❌：不支持/否
+- “N/A”：不适用
+
+**集成规则**：满足特定提示配置的需求（例如，在`.clinerules`或`.cursorrules`中），以确保在每次AI响应后正确调用`record_chat_history`工具。有关详细信息，请参阅 [AI/LLM 集成商重要提示](#AI/LLM 集成商重要提示)。
 
 ## 安装
 

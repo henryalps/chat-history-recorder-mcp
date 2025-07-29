@@ -34,6 +34,27 @@
 - 🔧 **Fallback Mechanism**: Automatically uses default configuration when config file is missing
 - 📋 **Smart Summarization**: System outputs are automatically summarized for concise storage
 
+
+## Supported Tools
+
+This project supports various AI development tools. The table below outlines the compatibility and configuration requirements for each.
+
+| Tool              | Supported | Requires Integration Rule | Returns Model Name |
+| :---------------- | :-------: | :-----------------------: | :----------------: |
+| `roocode`         |     ✅    |             ✅            |         ✅         |
+| `cline`           |     ✅    |             ✅            |         ✅         |
+| `Cursor`          |     ✅    |             ✅            |         ✅         |
+| `kiro`            |     ✅    |             ❌            |         ❌         |
+| `augment agent`   |     ✅    |             ✅            |         ❌         |
+| `augment chat`    |     ❌    |            N/A            |        N/A         |
+| `gemini cli`      |     ❌    |            N/A            |        N/A         |
+
+- ✅: Supported / Yes
+- ❌: Not Supported / No
+- `N/A`: Not Applicable
+
+**Integration Rule**: Refers to the need for a specific prompt configuration (e.g., in `.clinerules` or `.cursorrules`) to ensure the `record_chat_history` tool is called correctly after each AI response. For more details, see [Important Note for AI/LLM Integrators](#important-note-for-aillm-integrators).
+
 ## Installation
 
 1. Clone or download the project locally
