@@ -3,7 +3,7 @@
   <h1>Chat History Recorder MCP Server</h1>
   <p>An MCP (Model Context Protocol) server for automatically recording AI conversation history.</p>
   <p>
-    <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+    <a href="https://smithery.ai/server/@henryalps/chat-history-recorder-mcp"><img alt="smithery badge" src="https://smithery.ai/badge/@henryalps/chat-history-recorder-mcp"></a>
   </p>
 </div>
 
