@@ -154,13 +154,21 @@ The server provides the following tools for AI to automatically call:
 To ensure reliable conversation history logging, it is crucial to include this execution sequence in your integration logic such as .cursorrules or .clinerules:
 
 ```markdown
-# Core Execution Rule
+# Execution Protocol
 
-1.  **Formulate Response**: First, formulate the complete response to the user's query.
-2.  **Record History**: Immediately after formulating the response, you **MUST** call the `record_chat_history` tool to log the interaction.
-3.  **Finalize Turn**: Only after the history has been recorded, you may use a concluding tool like `attempt_completion` to finalize the turn.
+**PRIMARY DIRECTIVE: The `record_chat_history` tool is MANDATORY before any concluding action.**
 
-This sequence is mandatory and must be followed in every turn.
+**Workflow:**
+1. Formulate the response for the user.
+2. Call `record_chat_history` with the response details.
+3. Call `attempt_completion` to finalize the turn.
+
+**SELF-CORRECTION ALGORITHM:**
+IF the next tool is `attempt_completion`
+AND the previous tool was NOT `record_chat_history`
+THEN execute `record_chat_history` first.
+
+This protocol is absolute and cannot be bypassed.
 ```
 
 #### `record_chat_history`
